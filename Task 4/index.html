@@ -1,0 +1,57 @@
+<html>
+<head>
+  <title>Firebase Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBQzroHGcs5UKiJonVlEce2a0wUVD55nqI",
+      authDomain: "test-0016.firebaseapp.com",
+      databaseURL: "https://test-0016.firebaseio.com",
+      projectId: "gmailtest-0016",
+      storageBucket: "gmailtest-0016.appspot.com",
+      messagingSenderId: "795453650997"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js"></script>
+
+</head>
+<body>
+
+  <div id="login_div" class="main-div">
+    <h3>Enter the creds: </h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para"></p>
+    <p>Please enter the below information:</p>
+
+    <div id="data_div" class="data-div">
+      <form onsubmit = "return saveDetails(this);">
+        <input type = "date" placeholder="Date of Birth..." name = "date" />
+        <input type = "text" placeholder="Qualification..." name = "qualification" />
+        <input type = "text" placeholder="Job details..." name = "job_details" />
+        <input type = "text" placeholder="Topics of Interest..." name = "topics_interest" />
+        <input type = "submit" value = "Save Details" />
+      </form>
+    </div>
+
+    <button onclick="logout()">Logout</button>
+
+    <pre id = "output">
+      JSON will be shown here:
+    </pre>
+
+  </div>
+
+</body>
+</html>
